@@ -10,12 +10,13 @@
 <body>
 	<div align="center">
 		<h1>Customer Manager</h1>
-		<form action="get" action="search">
-			<input type="text" name="keyword" /> <input type="submit"
-				value="Search" />
-				
+			
+			<form method="get" action="search">
+        <input type="text" name="keyword" /> &nbsp;
+        <input type="submit" value="Search" />
+				</form>
 				<h3><a href="new">New Customer</a></h3>
-			<table border="1" padding="5">
+			<table border="1" cellpadding="5">
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
@@ -29,13 +30,15 @@
 					<td>${customer.name}</td>
 					<td>${customer.email}</td>
 					<td>${customer.address}</td>
-				
+					<td>><a href="edit?id=${customer.id}">Edit</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="delete?id=${customer.id}">Delete</a></td>
 				</tr>
 				
 				</c:forEach>
 			</table>
 
-		</form>
+		
 
 	</div>
 
